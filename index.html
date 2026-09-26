@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>METRO CITY — Open World Prototype</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <div class="loading-inner">
+      <h1 class="mc-logo">METRO<span>CITY</span></h1>
+      <div class="loading-bar-track">
+        <div id="loading-bar-fill"></div>
+      </div>
+      <p id="loading-text">Loading city block...</p>
+    </div>
+  </div>
+
+  <!-- Start menu -->
+  <div id="start-menu" class="hidden">
+    <div class="menu-panel">
+      <h1 class="mc-logo">METRO<span>CITY</span></h1>
+      <p class="menu-sub">Open World Prototype — Phase 1</p>
+      <button class="menu-btn" id="btn-play">PLAY</button>
+      <button class="menu-btn" id="btn-continue">CONTINUE</button>
+      <button class="menu-btn" id="btn-settings">SETTINGS</button>
+      <button class="menu-btn" id="btn-about">ABOUT</button>
+    </div>
+  </div>
+
+  <!-- Settings menu -->
+  <div id="settings-menu" class="hidden">
+    <div class="menu-panel">
+      <h2>SETTINGS</h2>
+      <label class="setting-row">
+        Graphics Quality
+        <select id="quality-select">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+      <label class="setting-row">
+        Look Sensitivity
+        <input type="range" id="sensitivity-range" min="0.5" max="3" step="0.1" value="1.4" />
+      </label>
+      <button class="menu-btn" id="btn-settings-back">BACK</button>
+    </div>
+  </div>
+
+  <!-- About menu -->
+  <div id="about-menu" class="hidden">
+    <div class="menu-panel">
+      <h2>ABOUT</h2>
+      <p class="about-text">
+        METRO CITY is an original open-world prototype built with Three.js.
+        This build is Phase 1: one fully explorable, polished city block.
+        Districts, vehicles, traffic, NPCs and missions arrive in later phases.
+      </p>
+      <button class="menu-btn" id="btn-about-back">BACK</button>
+    </div>
+  </div>
+
+  <!-- Game canvas -->
+  <canvas id="game-canvas"></canvas>
+
+  <!-- HUD (hidden until gameplay starts) -->
+  <div id="hud" class="hidden">
+    <div id="hud-top-left">
+      <div class="hud-bar-label">HEALTH</div>
+      <div class="hud-bar-track"><div id="health-fill" class="hud-bar-fill health"></div></div>
+      <div class="hud-bar-label">STAMINA</div>
+      <div class="hud-bar-track"><div id="stamina-fill" class="hud-bar-fill stamina"></div></div>
+    </div>
+
+    <div id="hud-top-right">
+      <div id="money-display">$<span id="money-value">500</span></div>
+      <div id="minimap">
+        <canvas id="minimap-canvas" width="140" height="140"></canvas>
+        <div id="minimap-arrow"></div>
+      </div>
+    </div>
+
+    <div id="hud-mission-box" class="hidden">
+      <div id="mission-title">MISSION</div>
+      <div id="mission-desc">—</div>
+    </div>
+
+    <div id="interact-prompt" class="hidden">Tap INTERACT</div>
+
+    <div id="notifications"></div>
+
+    <div id="fps-counter">0 FPS</div>
+
+    <!-- Mobile touch controls -->
+    <div id="mobile-controls">
+      <div id="joystick-zone" class="stick-zone">
+        <div id="joystick-base" class="stick-base">
+          <div id="joystick-knob" class="stick-knob"></div>
+        </div>
+      </div>
+
+      <div id="look-zone" class="look-zone"></div>
+
+      <div id="action-buttons">
+        <button id="btn-jump" class="round-btn">JUMP</button>
+        <button id="btn-sprint" class="round-btn">SPRINT</button>
+        <button id="btn-crouch" class="round-btn">CROUCH</button>
+        <button id="btn-interact" class="round-btn accent">INTERACT</button>
+      </div>
+    </div>
+
+    <button id="btn-pause" class="corner-btn">☰</button>
+  </div>
+
+  <!-- Pause menu -->
+  <div id="pause-menu" class="hidden">
+    <div class="menu-panel">
+      <h2>PAUSED</h2>
+      <button class="menu-btn" id="btn-resume">RESUME</button>
+      <button class="menu-btn" id="btn-pause-settings">SETTINGS</button>
+      <button class="menu-btn" id="btn-quit">QUIT TO MENU</button>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
