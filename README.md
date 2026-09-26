@@ -1,4 +1,4 @@
-# METRO CITY — Mobile Web Prototype
+METRO CITY — Mobile Web Prototype
 
 A mobile-first 3D open-world city game prototype built with:
 
@@ -53,3 +53,4 @@ The prototype includes:
 The interface is designed for mobile gameplay and includes:
 
 - Virtual
+- 
