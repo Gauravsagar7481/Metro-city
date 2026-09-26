@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  >
+
+  <meta name="theme-color" content="#070b13">
+
+  <title>METRO CITY</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 3D GAME -->
+  <div id="game-container"></div>
+
+
+  <!-- =========================
+       GAME HUD
+  ========================== -->
+
+  <div id="hud">
+
+    <!-- TOP LEFT -->
+    <div class="top-left">
+
+      <div class="logo">
+        METRO CITY
+      </div>
+
+      <div class="player-card">
+
+        <div class="avatar">
+          M
+        </div>
+
+        <div class="bars">
+
+          <div class="bar health">
+            <span id="healthBar"></span>
+          </div>
+
+          <div class="bar stamina">
+            <span id="staminaBar"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- TOP RIGHT -->
+    <div class="top-right">
+
+      <div class="money">
+        🪙 <span id="money">0</span>
+      </div>
+
+      <div class="zone">
+        📍 <span id="zone">NEIGHBORHOOD</span>
+      </div>
+
+    </div>
+
+
+    <!-- MINI MAP -->
+    <div class="mini-map">
+
+      <div class="map-road h"></div>
+
+      <div class="map-road v"></div>
+
+      <div class="map-dot"></div>
+
+      <div class="map-car"></div>
+
+    </div>
+
+
+    <!-- SPEED -->
+    <div class="speedometer">
+
+      <span id="speed">
+        0
+      </span>
+
+      <small>
+        KM/H
+      </small>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       START SCREEN
+  ========================== -->
+
+  <div id="start-screen">
+
+    <div class="title">
+      METRO CITY
+    </div>
+
+    <div class="subtitle">
+      OPEN WORLD MOBILE PROTOTYPE
+    </div>
+
+    <button id="startButton">
+      PLAY
+    </button>
+
+  </div>
+
+
+
+  <!-- =========================
+       MOBILE CONTROLS
+  ========================== -->
+
+  <div id="touch-ui">
+
+
+    <!-- LEFT JOYSTICK -->
+
+    <div id="joystick-zone">
+
+      <div id="joystick-base">
+
+        <div id="joystick-knob"></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE CAMERA -->
+
+    <div id="look-zone"></div>
+
+
+    <!-- ACTION BUTTONS -->
+
+    <div class="right-actions">
+
+      <button id="jump" class="round action-btn">
+        JUMP
+      </button>
+
+      <button id="run" class="round action-btn">
+        RUN
+      </button>
+
+      <button id="enterCar" class="round action-btn car-btn">
+        CAR
+      </button>
+
+    </div>
+
+
+    <!-- VEHICLE CONTROLS -->
+
+    <div id="vehicle-controls">
+
+      <button id="brake" class="vehicle-btn">
+        BRAKE
+      </button>
+
+      <button id="gas" class="vehicle-btn gas">
+        GAS
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- MESSAGE -->
+
+  <div id="hint">
+    Move near the red car and press CAR.
+  </div>
+
+
+  <!-- GAME JAVASCRIPT -->
+
+  <script
+    type="module"
+    src="game.js">
+  </
